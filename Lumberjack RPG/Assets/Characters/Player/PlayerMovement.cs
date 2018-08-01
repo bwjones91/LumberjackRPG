@@ -43,10 +43,12 @@ public class PlayerMovement : MonoBehaviour
         {
             ProcessDirectMovement();
             navMeshAgent.enabled = false;
+            aiCharacterControl.enabled = false;
         }
         else
         {
             navMeshAgent.enabled = true;
+            aiCharacterControl.enabled = true;
         }
     }
 
@@ -73,16 +75,22 @@ public class PlayerMovement : MonoBehaviour
 
     // TODO make this get called again
     void ProcessDirectMovement()
-    {
+    {   
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        bool j = Input.GetKeyDown(KeyCode.Space);
-                        
+        float j = Input.GetAxis("Jump");
+        bool jump = false;
+        if(j > 0)
+        {
+            jump = true;
+        }
+        
         // calculate camera relative direction to move:
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
 
-        Vector3 movement = cameraForward + h * Camera.main.transform.right;
+        Vector3 movement = v * cameraForward + h * Camera.main.transform.right;
         
-        thirdPersonCharacter.Move(movement, false, j);
+        thirdPersonCharacter.Move(movement, false, jump);
+        jump = false;
     }
 }

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1741527724639266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3967953e15f5aed41bb644fd7e16a3cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f38397a5b56d9b44b4c13df92053e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114393861627536560
@@ -147,10 +147,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1098726664698626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ffdb3e89391574a9d15f4b42cebf31, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f83d710eebbbca438a7ce04015996df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkCursor: {fileID: 2800000, guid: ee1d5c62ff435e546b550f24c9072a57, type: 3}
-  targetCursor: {fileID: 2800000, guid: 94b8eacbbea04e845961017e976a8677, type: 3}
-  unknownCursor: {fileID: 2800000, guid: 7d2cd4b46d547b94e8b345ca8c5e74f7, type: 3}
+  walkCursor: {fileID: 0}
+  unknownCursor: {fileID: 0}
+  targetCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}

@@ -36,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 4664067915778198}
   - {fileID: 4503289431946456}
+  - {fileID: 4297056583291128}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,13 +97,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 1800
   m_StationaryTurnSpeed: 900
-  m_JumpPower: 8
+  m_JumpPower: 12
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 1
-  sprintMultiplier: 1
+  sprintAmount: 2
 --- !u!136 &13615390
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -225,6 +226,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1363759560687062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4297056583291128}
+  - component: {fileID: 65271872491728516}
+  - component: {fileID: 114745679162869596}
+  m_Layer: 0
+  m_Name: Attack Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1371880871299540
 GameObject:
   m_ObjectHideFlags: 1
@@ -554,6 +572,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4047665826058894}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4297056583291128
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363759560687062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.57, z: 1.726}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408730}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4365919814871282
 Transform:
@@ -889,6 +920,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1371880871299540}
   m_Mesh: {fileID: 4300002, guid: dddb907dbf9c12345b42f96e3df0a3b3, type: 3}
+--- !u!65 &65271872491728516
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363759560687062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7298126, y: 0.39055157, z: 1.7381439}
+  m_Center: {x: -0.031028748, y: -0.30472422, z: -0.90242386}
 --- !u!114 &114012247426947922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -897,11 +940,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 149790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d6b266c1c6df446ac1c9a920311bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: a9268856d129aa64a8ab4590ce181c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 1250
-  damagePerHit: 15
+  enemyLayer: 9
+  maxHealthPoints: 100
+  damagePerHit: 10
   minTimeBetweenHits: 0.5
   maxAttackRange: 2
 --- !u!114 &114055461071691060
@@ -916,6 +960,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &114745679162869596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363759560687062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62314532e8c3e04a885479ebfc03a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageCaused: 15
 --- !u!114 &114866798248049420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -924,10 +980,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 149790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1f9e9c157c4f64b8092212324a9e61, type: 3}
+  m_Script: {fileID: 11500000, guid: beb75cb33cc6f884db40fe6cec105d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInDirectmode: 0
 --- !u!137 &137096104406903188
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

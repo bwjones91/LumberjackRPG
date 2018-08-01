@@ -2559,8 +2559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoints: 100
-  chaseRadius: 6
-  attackRadius: 4
+  chaseRadius: 20
+  attackRadius: 15
   damagePerShot: 9
   secondsBetweenShots: 0.5
   projectileToUse: {fileID: 1251942309456502, guid: 0880f0dc4f4dc43439039cd8aff1c06a,
