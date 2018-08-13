@@ -70,15 +70,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				HandleAirborneMovement();
 			}
 
-			ScaleCapsuleForCrouching(crouch);
-			PreventStandingInLowHeadroom();
+			//ScaleCapsuleForCrouching(crouch);
+			//PreventStandingInLowHeadroom();
 
 			// send input and other state parameters to the animator
 			UpdateAnimator(move);
 		}
 
 
-		void ScaleCapsuleForCrouching(bool crouch)
+		/*void ScaleCapsuleForCrouching(bool crouch)
 		{
 			if (m_IsGrounded && crouch)
 			{
@@ -100,9 +100,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Capsule.center = m_CapsuleCenter;
 				m_Crouching = false;
 			}
-		}
+		}*/
 
-		void PreventStandingInLowHeadroom()
+		/*void PreventStandingInLowHeadroom()
 		{
 			// prevent standing up in crouch-only zones
 			if (!m_Crouching)
@@ -114,7 +114,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 					m_Crouching = true;
 				}
 			}
-		}
+		}*/
 
 
 		void UpdateAnimator(Vector3 move)

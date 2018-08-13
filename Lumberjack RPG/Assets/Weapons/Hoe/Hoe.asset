@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d126a0d4833ec784cbc46574b52466e4, type: 3}
   m_Name: Hoe
   m_EditorClassIdentifier: 
+  gripTransform: {fileID: 4263100336713896, guid: c9cc0f724adde894e8480839d5b636d5,
+    type: 2}
   weaponPrefab: {fileID: 1274797246840802, guid: cc0dbe33ee8adbe4eb124e2d95d37fe4,
     type: 2}
   attackAnimation: {fileID: 0}
